@@ -5,9 +5,9 @@ import (
 	"fmt"
 )
 
-type operate func(x, y int) int
+type operate2 func(x, y int) int
 
-func calc(x, y int, op operate) (int, error) {
+func calc(x, y int, op operate2) (int, error) {
 	if op == nil {
 		return 0, errors.New("invalid operation")
 	}
