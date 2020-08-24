@@ -13,7 +13,7 @@ func main() {
 func coordinateWithContext() {
 	total := 12
 	var num int32
-	fmt.Printf("the num : %d {with context.Context}\n", num)
+	fmt.Printf("the num : %d [with context.Context]\n", num)
 	cxt, cancelFunc := context.WithCancel(context.Background())
 	for i := 0; i < total; i++ {
 		go addNum2(&num, i, func() {
@@ -23,7 +23,7 @@ func coordinateWithContext() {
 		})
 	}
 	<-cxt.Done()
-	fmt.Print("end")
+	fmt.Println("end")
 }
 func addNum2(numP *int32, id int, deferFunc func()) {
 	defer func() {
